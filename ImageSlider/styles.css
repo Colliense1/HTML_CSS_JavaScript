@@ -1,0 +1,78 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #001D3E;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    filter: blur(8px);
+    transition: opacity 0.5s ease;
+}
+
+.radio_buttons {
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.radio_buttons input {
+    display: none;
+}
+
+.radio_buttons label {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #B8F0FF;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.radio_buttons label:hover {
+    transform: scale(1.4);
+    filter: brightness(1.2);
+}
+
+.slide.active::after {
+    filter: none;
+}
