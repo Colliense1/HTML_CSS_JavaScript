@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+:root {
+    --bg_color: #050505;
+    --txt_color: #ffffff;
+    --main_color: #00a2ff;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg_color);
+}
+
+.wrapper {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+    margin: 20px auto;
+    transform: translate(-50%, -50%);
+}
+
+.text_animation {
+    min-width: 300px;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    color: var(--txt_color);
+}
+
+.text_animation span {
+    position: relative;
+}
+
+.text_animation span::before {
+    content: "Software Engineer";
+    color: var(--main_color);
+    animation: words 20s infinite;
+}
+
+.text_animation span::after {
+    content: "";
+    width: calc(100% + 8px);
+    height: 100%;
+    right: -8px;
+    position: absolute;
+    border-left: 3px solid var(--bg_color);
+    background-color: var(--bg_color);
+    animation: animated 0.7s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes animated {
+    to {
+        border-left: 2px solid var(--main_color);
+    }
+}
+
+@keyframes words {
+
+    0%,
+    20% {
+        content: "Html and css";
+    }
+
+    21%,
+    40% {
+        content: "JavaScript";
+    }
+
+    41%,
+    60% {
+        content: "Python";
+    }
+
+    61%,
+    80% {
+        content: "Django";
+    }
+
+    81%,
+    100% {
+        content: "React";
+    }
+}
+
+@keyframes typing {
+
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+    }
+}
