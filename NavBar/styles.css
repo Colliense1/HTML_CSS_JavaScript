@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #D7EAFF;
+}
+
+:root {
+    --nav_background: #00245F;
+    --txt_color: #D7EAFF;
+    --logo_color: #F8E0FF;
+}
+
+header {
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--nav_background);
+    color: var(--txt_color);
+}
+
+.logo {
+    font-size: 1.4em;
+    color: var(--logo_color);
+    font-weight: 500;
+}
+
+.logo .logo_span {
+    color: var(--logo_color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: var(--txt_color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    padding: 10px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--txt_color);
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 50%;
+    left: 50%;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile_pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile_pic .profile_name {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--nav_background);
+    color: var(--txt_color);
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    margin-bottom: 20px;
+}
+
+.sidebar-header .logo_sidebar {
+    color: var(--logo_color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.sidebar-links a {
+    display: block;
+    color: var(--txt_color);
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    padding: 10px;
+}
+
+.sidebar-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: var(--txt_color);
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.sidebar-links a:hover::after {
+    width: 20%;
+    left: 50%;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+        position: fixed;
+        height: 100%;
+    }
+
+    .sidebar.active {
+        display: block;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .logo {
+        font-size: 1rem;
+        color: var(--logo_color);
+        font-weight: 500;
+    }
+
+    .logo .logo_span {
+        color: var(--logo_color);
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .nav-links a {
+        color: var(--txt_color);
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 1rem;
+        font-weight: 500;
+        position: relative;
+        padding: 7px;
+    }
+}
