@@ -1,1 +1,1 @@
-![responsive navigation bar using html css js](images/responsive navigation bar using html css and javascript.jpg)
+![responsive navigation bar using html css js](images/responsive%20navigation%20bar%20using%20html%20css%20and%20javascript.jpg)
